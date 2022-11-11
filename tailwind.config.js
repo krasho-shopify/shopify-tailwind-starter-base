@@ -1,4 +1,14 @@
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
+
 module.exports = {
+  mode: 'jit',
   prefix: 'twcss-',
   content: [
     './layout/*.liquid',
@@ -17,13 +27,173 @@ module.exports = {
       pageMaxWidth: '1440px',
     },
     extend: {
+      colors: {
+        primary: withOpacity('--color-primary'),
+        contrast: withOpacity('--color-contrast'),
+        notice: withOpacity('--color-accent'),
+        shopPay: 'var(--color-shop-pay)',
+        cookies: {
+          subtle: '#9E9E9E',
+          muted: '#EEEEEE',
+          primary: '#00A0DC',
+        },
+      },
+      screens: {
+        sm: '32em',
+        md: '48em',
+        lg: '64em',
+        xl: '80em',
+        '2xl': '96em',
+        'sm-max': { max: '48em' },
+        'sm-only': { min: '32em', max: '48em' },
+        'md-only': { min: '48em', max: '64em' },
+        'lg-only': { min: '64em', max: '80em' },
+        'xl-only': { min: '80em', max: '96em' },
+        '2xl-only': { min: '96em' },
+      },
+      spacing: {
+        nav: 'var(--height-nav)',
+        screen: 'var(--screen-height, 100vh)',
+      },
+      height: {
+        screen: 'var(--screen-height, 100vh)',
+        'screen-no-nav':
+          'calc(var(--screen-height, 100vh) - var(--height-nav))',
+      },
+      width: {
+        mobileGallery: 'calc(100vw - 3rem)',
+      },
       fontFamily: {
-        heading: 'var(--font-heading-family)',
+        serif: ["'ff-nexus-typewriter', serif"],
+        header: ["'Barlow', sans-serif"],
+        sans: ["'Barlow', sans-serif"],
+        secondary: ['ff-nexus-typewriter,sans-serif, serif'],
+      },
+      secondary: [],
+      fontSize: {
+        display: ['var(--font-size-display)', '1.1'],
+        heading: ['var(--font-size-heading)', '1.25'],
+        lead: ['var(--font-size-lead)', '1.333'],
+        copy: ['var(--font-size-copy)', '1.5'],
+        fine: ['var(--font-size-fine)', '1.333'],
+      },
+      maxWidth: {
+        'prose-narrow': '45ch',
+        'prose-wide': '80ch',
+      },
+      boxShadow: {
+        border: 'inset 0px 0px 0px 1px rgb(var(--color-primary) / 0.08)',
+        darkHeader: 'inset 0px -1px 0px 0px rgba(21, 21, 21, 0.4)',
+        lightHeader: 'inset 0px -1px 0px 0px rgba(21, 21, 21, 0.05)',
+        dark: '0px 16px 24px rgba(13, 13, 13, 0.9);',
+      },
+      textColor: {
+        radix: {
+          'high-contrast': `var(--gray12)`,
+          'low-contrast': `var(--gray11)`,
+          inverted: `var(--gray1)`,
+        },
+        cookies: {
+          subtle: '#9E9E9E',
+          muted: '#EEEEEE',
+        },
+        skin: {
+          primary: withOpacity('--color-skin-primary'),
+          red: withOpacity('--color-red'),
+          tangerine: withOpacity('--color-tangerine'),
+          cerulean: withOpacity('--color-cerulean'),
+          salmon: withOpacity('--color-salmon'),
+          tree: withOpacity('--color-tree'),
+          yellow: withOpacity('--color-yellow'),
+          'yellow-two': withOpacity('--color-yellow-two'),
+          'yellow-three': withOpacity('--color-yellow-three'),
+          carnation: withOpacity('--color-carnation'),
+          base: withOpacity('--color-text-base'),
+          inverted: withOpacity('--color-text-inverted'),
+          muted: withOpacity('--color-text-muted'),
+          secondary: withOpacity('--color-text-secondary'),
+          countdown: withOpacity('--color-text-countdown'),
+          dark: withOpacity('--color-dark'),
+          'dark-soft': withOpacity('--color-dark-soft'),
+          'low-contrast': `var(--cyan11)`,
+          'high-contrast': `var(--cyan12)`,
+          accent: withOpacity('--color-gray-accent'),
+        },
+      },
+      backgroundColor: {
+        radix: {
+          default: `var(--gray1)`,
+          primary: `var(--cyan9)`,
+          'primary-hover': `var(--cyan10)`,
+          secondary: `var(--gray4)`,
+          'secondary-hover': `var(--gray5)`,
+        },
+        skin: {
+          dark: withOpacity('--color-dark'),
+          'blue-alt': withOpacity('--color-blue-alt'),
+          'dark-soft': withOpacity('--color-dark-soft'),
+          accent: withOpacity('--color-gray-accent'),
+          primary: withOpacity('--color-skin-primary'),
+          red: withOpacity('--color-red'),
+          'red-secondary': withOpacity('--color-red-secondary'),
+          tangerine: withOpacity('--color-tangerine'),
+          cerulean: withOpacity('--color-cerulean'),
+          salmon: withOpacity('--color-salmon'),
+          tree: withOpacity('--color-tree'),
+          yellow: withOpacity('--color-yellow'),
+          'yellow-two': withOpacity('--color-yellow-two'),
+          'yellow-three': withOpacity('--color-yellow-three'),
+          base: withOpacity('--color-text-base'),
+          carnation: withOpacity('--color-carnation'),
+          fill: withOpacity('--color-fill'),
+          thumbnail: withOpacity('--color-fill-thumbnail'),
+          inverted: withOpacity('--color-text-inverted'),
+          one: withOpacity('--color-fill-one'),
+          two: withOpacity('--color-fill-two'),
+          three: withOpacity('--color-fill-three'),
+          four: withOpacity('--color-fill-four'),
+          secondary: withOpacity('--color-fill-secondary'),
+          highlighted: withOpacity('--color-highlighted'),
+          'dropdown-hover': withOpacity('--color-fill-dropdown-hover'),
+          'button-secondary': withOpacity('--color-button-secondary'),
+          'button-disable': withOpacity('--color-button-disable'),
+          'button-hover': withOpacity('--color-button-hover'),
+          ui: `var(--slate3)`,
+          cta: `var(--cyan9)`,
+          'cta-hover': `var(--cyan10)`,
+          default: withOpacity('--color-dark'),
+        },
+      },
+      borderColor: {
+        skin: {
+          dark: withOpacity('--color-dark'),
+          'dark-soft': withOpacity('--color-dark-soft'),
+          primary: withOpacity('--color-skin-primary'),
+          red: withOpacity('--color-red'),
+          yellow: withOpacity('--color-yellow'),
+          inverted: withOpacity('--color-text-inverted'),
+          base: withOpacity('--color-border-base'),
+          one: withOpacity('--color-border-one'),
+          two: withOpacity('--color-border-two'),
+          three: withOpacity('--color-border-three'),
+          four: withOpacity('--color-border-four'),
+          accent: withOpacity('--color-gray-accent'),
+          form: withOpacity('--color-border-form'),
+          'yellow-three': withOpacity('--color-yellow-three'),
+          secondary: withOpacity('--color-secondary'),
+          ui: `var(--slate6)`,
+        },
+      },
+      ringColor: {
+        skin: {
+          red: withOpacity('--color-red'),
+          base: withOpacity('--color-border-base'),
+          form: withOpacity('--color-border-form'),
+          primary: withOpacity('--color-skin-primary'),
+        },
       },
     },
-    color: {
-      black: '#000000',
-    },
   },
+
   plugins: [],
 };
