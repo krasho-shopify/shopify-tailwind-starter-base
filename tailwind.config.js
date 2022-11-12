@@ -9,7 +9,7 @@ function withOpacity(variableName) {
 
 module.exports = {
   mode: 'jit',
-  prefix: 'twcss-',
+  prefix: '',
   content: [
     './layout/*.liquid',
     './templates/*.liquid',

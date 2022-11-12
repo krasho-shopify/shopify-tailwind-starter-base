@@ -1,38 +1,6 @@
-<div class="twcss-transition-all twcss-h-[36px] twcss-sticky twcss-w-full twcss-top-0 twcss-z-20 twcss-overflow-hidden twcss-border-gray-600 twcss-border-b" style="background-color:rgb(40,160,220)">
-  <div class="twcss-py-2 twcss-relative twcss-cursor-pointer 
-              twcss-w-full 
-              md:twcss-max-w-[1920px] 
-              twcss-px-4 
-              md:twcss-px-6 
-              lg:twcss-px-8 
-              2xl:twcss-px-10  
-              twcss-mx-auto 
-              twcss-h-full">
-     <button aria-label="Close Button" 
-             class="twcss-fixed twcss-z-10 twcss-rounded-full twcss-inline-flex twcss-items-center twcss-justify-center twcss-w-8 twcss-h-8 
-                    lg:twcss-w-9 lg:twcss-h-9 twcss-transition twcss-duration-200 twcss-text-opacity-50 focus:twcss-outline-none twcss-top-0.5 
-                    md:twcss-top-2 lg:twcss-top-7 xl:twcss-top-10 twcss-right-0.5 md:twcss-right-2 lg:twcss-right-7 xl:twcss-right-10 twcss-bg-transparent 
-                    twcss-text-skin-inverted twcss-absolute !twcss-top-[50%] !-twcss-translate-y-2/4 twcss-z-10">
-        <svg stroke="currentColor" 
-             fill="currentColor" 
-             stroke-width="0" 
-             viewBox="0 0 512 512"
-            class="twcss-text-skin-dark twcss-text-xl lg:twcss-text-2xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-           <path d="M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z"></path>
-        </svg>
-     </button>
-     <div class="twcss-flex twcss-justify-start md:twcss-justify-center twcss-items-center twcss-gap-8 twcss-w-full twcss-h-full cursor-pointer">
-        <div class="twcss-flex twcss-justify-start twcss-flex-wrap twcss-max-w-[380px]">
-           <div class="twcss-text-sm twcss-font-secondary twcss-text-left twcss-w-full twcss-text-black">{{ section.settings.announcement_title }}</div>
-        </div>
-        <div class="twcss-hidden sm:twcss-block">
-           <button class="twcss-text-sm twcss-px-3 twcss-py-1 twcss-uppercase twcss-font-bold twcss-text-skin-primary twcss-bg-black twcss-rounded-full active:twcss-bg-skin-inverted/70">SHOP NOW</button>
-        </div>
-     </div>
-  </div>
+<div class="w-full h-[40px] relative text-center font-serif text-xs md:text-sm mx-auto flex items-center justify-center bg-cookies-primary text-black">
+  {{ section.settings.announcement_title }}
 </div>
-
-
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
@@ -122,7 +90,7 @@
       "id": "announcement_title",
       "type": "text",
       "label": "Title",
-      "default": "Check out our new hemp product lineup"
+      "default": "Now get free shipping on orders over $50!"
     }
   ]
 }
