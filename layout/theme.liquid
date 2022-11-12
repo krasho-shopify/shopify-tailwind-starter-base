@@ -111,5 +111,29 @@
           <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
         {%- endif -%}      
     </div>  
+
+    <script>
+      let hamburguerButton = document.getElementById("hamburguer_button")
+      hamburguerButton.addEventListener('click', function() {
+
+        let sidebarMenu = document.getElementById("sidebar_menu")        
+        sidebarMenu.classList.remove('opacity-0')
+        sidebarMenu.classList.add('opacity-1')
+
+      }, false)
+
+      let sidebarCloseButton = document.getElementById("close_sidebar_menu")
+      sidebarCloseButton.addEventListener('click', function() {
+
+        let sidebarMenu = document.getElementById("sidebar_menu")        
+        sidebarMenu.classList.remove('opacity-1')
+        sidebarMenu.classList.add('opacity-0')
+
+      }, false)
+
+
+      
+
+    </script>  
   </body>
 </html>

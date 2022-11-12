@@ -1,5 +1,5 @@
 <header role="banner" class="relative bg-black text-contrast dark:text-primary shadow-darkHeader hidden font-serif uppercase tracking-widest font-medium h-nav lg:flex items-center sticky transition duration-300 bg-black z-40 top-0 justify-between w-full leading-none gap-8 px-4 lg:px-6 py-0 max-h-[64px]">
-  <button class="relative flex items-center justify-center w-8 h-8 focus:ring-primary/5">
+  <button class="relative flex items-center justify-center w-8 h-8 focus:ring-primary/5" id="hamburguer_button">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" class="w-5 h-5">
       <title>Menu</title>
       <line x1="3" y1="6.375" x2="17" y2="6.375" stroke-width="1.25"></line>
@@ -48,6 +48,7 @@
 </header>
 
 {%- render "nav", menu: section.settings.menu -%}
+{%- render "sidebar", menu: section.settings.menu -%}
 
 {% schema %}
 {
@@ -56,9 +57,14 @@
     {
       "type": "link_list",
       "id": "menu",
-      "label": "Menu",
-      "default": "main-menu"
+      "label": "Menu"      
     },
+    {
+      "type": "link_list",
+      "id": "sidebar_menu",
+      "label": "Sidebar Menu"      
+    },
+
     {
       "type": "image_picker",
       "id": "logo_cookies",
