@@ -12,6 +12,7 @@
     "20a5a3fb-c49f-44ff-9227-ae1331a6fd2a": {
       "type": "featured-collection",
       "settings": {
+        "featured_collections": "frontpage"
       }
     }
   },
