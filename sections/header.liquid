@@ -10,7 +10,18 @@
   <div class="absolute top-[50%] right-[50%] translate-x-[50%] -translate-y-[50%] ">
     <a class="font-bold" href="/">
       <div class="flex items-center justify-center !text-md text-heading2 uppercase tracking-tight">
-        <img class="mr-2 !w-[30px]" src="https://www.datocms-assets.com/52824/1658777341-2021_c-bite-logo-white-1.svg" width="30" height="30" alt="Cookies" loading="lazy" decoding="async">SHOP
+        <!--<img class="mr-2 !w-[30px]" src="https://www.datocms-assets.com/52824/1658777341-2021_c-bite-logo-white-1.svg" width="30" height="30" alt="Cookies" loading="lazy" decoding="async">SHOP-->
+
+        {%- if section.settings.logo != blank -%}          
+          <img srcset="{{ section.settings.logo | img_url: 'master' }}"
+            src="{{ section.settings.logo | img_url: image_size }}"
+            loading="lazy"
+            class="mr-2 !w-[30px]"
+            alt="Cookies">
+        {%- else -%}
+          <span class="h2">{{ shop.name }}</span>
+        {%- endif -%}
+
       </div>
     </a>
   </div>
@@ -51,6 +62,11 @@
       "id": "menu",
       "label": "Menu",
       "default": "main-menu"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"      
     }    
   ]
 }
