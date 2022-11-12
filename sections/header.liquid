@@ -12,13 +12,14 @@
       <div class="flex items-center justify-center !text-md text-heading2 uppercase tracking-tight">
         <!--<img class="mr-2 !w-[30px]" src="https://www.datocms-assets.com/52824/1658777341-2021_c-bite-logo-white-1.svg" width="30" height="30" alt="Cookies" loading="lazy" decoding="async">SHOP-->
 
-        {%- if section.settings.logo != blank -%}          
-          <img srcset="{{ section.settings.logo | img_url: 'master' }}"
-            src="{{ section.settings.logo | img_url: 'master' }}"
+        veamos: {{section.settings.logo_cookies}}
+        {%- if section.settings.logo_cookies != blank -%}          
+          <img srcset="{{ section.settings.logo_cookies | img_url: 'master' }}"
+            src="{{ section.settings.logo_cookies | img_url: 'master' }}"
             loading="lazy"
             class="mr-2 !w-[100px]"
             alt="Cookies"
-            width="100px">
+            width="100">
         {%- else -%}
           <span class="h2">{{ shop.name }}</span>
         {%- endif -%}
@@ -66,7 +67,7 @@
     },
     {
       "type": "image_picker",
-      "id": "logo",
+      "id": "logo_cookies",
       "label": "Logo"      
     }    
   ]
