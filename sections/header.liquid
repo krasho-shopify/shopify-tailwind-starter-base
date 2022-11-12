@@ -1,4 +1,5 @@
-<header role="banner" class="relative bg-black text-contrast dark:text-primary shadow-darkHeader hidden font-serif uppercase tracking-widest font-medium h-nav lg:flex items-center sticky transition duration-300 bg-black z-40 top-0 justify-between w-full leading-none gap-8 px-4 lg:px-6 py-0 max-h-[64px]">
+<header role="banner" class="relative bg-black text-contrast dark:text-primary shadow-darkHeader flex font-serif uppercase tracking-widest font-medium h-nav 
+              items-center sticky transition duration-300 bg-black z-40 top-0 justify-between w-full leading-none gap-8 px-4 lg:px-6 py-0 max-h-[64px] min-h-[4rem]" >
   <button class="relative flex items-center justify-center w-8 h-8 focus:ring-primary/5" id="hamburguer_button">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" class="w-5 h-5">
       <title>Menu</title>
@@ -9,9 +10,7 @@
   </button>
   <div class="absolute top-[50%] right-[50%] translate-x-[50%] -translate-y-[50%] ">
     <a class="font-bold" href="/">
-      <div class="flex items-center justify-center !text-md text-heading2 uppercase tracking-tight">
-        <!--<img class="mr-2 !w-[30px]" src="https://www.datocms-assets.com/52824/1658777341-2021_c-bite-logo-white-1.svg" width="30" height="30" alt="Cookies" loading="lazy" decoding="async">SHOP-->
-        
+      <div class="flex items-center justify-center !text-md text-heading2 uppercase tracking-tight">        
         {%- if settings.logo_cookies != blank -%}          
            {{ settings.logo_cookies | image_url: width: 100 | image_tag: alt: "Cookies" }}
         {%- else -%}
@@ -54,6 +53,12 @@
 {
   "name": "navigation-menu",
   "settings": [
+    {
+      "type": "text",
+      "id": "menu_title",
+      "label": "Menu Title",
+      "default": "Menu"
+    },
     {
       "type": "link_list",
       "id": "menu",

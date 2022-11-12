@@ -4,7 +4,11 @@
         {{ product.featured_image | image_url: width: 320, height: 400 | image_tag: alt: product.title, class: "aspect-[4/5] w-full object-cover fadeIn"}}
         <div class="items-center px-2 h-full pb-20 relative">
           <p class="w-full overflow-hidden inline-grid text-lg text-white mt-2 font-medium">{{ product.title }}</p>
-          <p class="w-full overflow-hidden inline-grid font-serif text-sm text-cookies-subtle">Vape</p>
+          <p class="w-full overflow-hidden inline-grid font-serif text-sm text-cookies-subtle flex">
+            {%- for tag in product.tags -%}
+              <span>{{tag}}<span>
+            {%- endfor -%} 
+          </p>
         </div>
       </div>
     </a>
