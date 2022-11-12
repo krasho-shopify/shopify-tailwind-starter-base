@@ -20,3 +20,30 @@
     </a>
     <link rel="prefetch" as="fetch" href="/__rsc?state=%7B%22pathname%22%3A%22%2Fcollections%2Fdelta-8-hhc-2g-blunts%22%2C%22search%22%3A%22%22%7D">
   </div>
+
+
+  {% schema %}
+  {
+    "name": "Announcement Bar Conf",
+    "settings": [
+      {
+        "id": "announcement_show",
+        "type": "color",
+        "label": "Background Color",
+        "default": "#00A0DC"
+      },
+      {
+        "id": "announcement_title",
+        "type": "text",
+        "label": "Title",
+        "default": "Now get free shipping on orders over $50!"
+      }
+    ],
+    "presets": [
+        {
+          "name": "AnnouncementBar"
+        }
+      ]    
+  }
+  {% endschema %}
+  
