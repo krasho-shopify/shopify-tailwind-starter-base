@@ -14,10 +14,11 @@
 
         {%- if section.settings.logo != blank -%}          
           <img srcset="{{ section.settings.logo | img_url: 'master' }}"
-            src="{{ section.settings.logo | img_url: image_size }}"
+            src="{{ section.settings.logo | img_url: 'master' }}"
             loading="lazy"
-            class="mr-2 !w-[30px]"
-            alt="Cookies">
+            class="mr-2 !w-[100px]"
+            alt="Cookies"
+            width="100px">
         {%- else -%}
           <span class="h2">{{ shop.name }}</span>
         {%- endif -%}

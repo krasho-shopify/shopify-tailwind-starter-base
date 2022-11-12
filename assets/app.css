@@ -949,6 +949,10 @@ input[type='search']::-webkit-search-results-decoration {
   width: 1.5rem;
 }
 
+.\!w-\[100px\] {
+  width: 100px !important;
+}
+
 .max-w-prose-wide {
   max-width: 80ch;
 }
