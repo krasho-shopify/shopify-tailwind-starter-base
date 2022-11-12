@@ -17,7 +17,7 @@
       {
         "type": "image_picker",
         "id": "logo_cookies",
-        "label": "Logo"          
+        "label": "Logo"
       }
     ]
   },

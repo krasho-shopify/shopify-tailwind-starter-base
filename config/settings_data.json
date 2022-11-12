@@ -1,5 +1,6 @@
 {
   "current": {
+    "logo_cookies": "shopify:\/\/shop_images\/logo.png",
     "social_twitter_link": "https:\/\/twitter.com\/cookiescbdstore",
     "social_facebook_link": "https:\/\/facebook.com\/cookiescbd",
     "social_pinterest_link": "",
@@ -110,8 +111,7 @@
         "type": "header",
         "settings": {
           "menu": "main-menu",
-          "sidebar_menu": "sidebar-menu",
-          "logo_cookies": "shopify:\/\/shop_images\/logo.png"
+          "sidebar_menu": "sidebar-menu"
         }
       },
       "footer": {
