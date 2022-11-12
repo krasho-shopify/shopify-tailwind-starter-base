@@ -9,11 +9,11 @@
     "social_snapchat_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
-    "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "favicon": "shopify:\/\/shop_images\/apple-touch-icon.png",
     "currency_code_enabled": true,
+    "predictive_search_enabled": true,
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
     "gradient_accent_1": "",
@@ -110,6 +110,7 @@
         "type": "header",
         "settings": {
           "menu": "main-menu",
+          "sidebar_menu": "sidebar-menu",
           "logo_cookies": "shopify:\/\/shop_images\/logo.png"
         }
       },
