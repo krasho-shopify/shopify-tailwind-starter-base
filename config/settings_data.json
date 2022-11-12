@@ -117,7 +117,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer-menu": "footer"
+          "footer_menu": "footer"
         }
       }
     },
