@@ -8,83 +8,19 @@
           <button class="text-black font-medium inline-block uppercase cursor-pointer text-center py-3 px-6 rounded-md transition-all hover:tracking-wide hover:text-md hover:font-bold bg-skin-primary w-full" disabled="">Sign up</button>
         </div>
         <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-          <div class="widget-link  pt-3">
-            <p class="pb-2 text-2xl text-heading tracking-wide border-b border-skin-accent text-skin-inverted pb-1 m-0">Shop Hemp</p>
-            <ul class="mt-3">
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://shop.cookies.co/products">Featured Products</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" href="/collections/cbd">CBD</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" href="/collections/delta-8-hhc-2g-blunts">Delta 8, HHC &amp; THC-O</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" href="/collections/accessories">Accessories</a>
-              </li>
-            </ul>
-          </div>
-          <div class="widget-link  pt-3">
-            <p class="pb-2 text-2xl text-heading tracking-wide border-b border-skin-accent text-skin-inverted pb-1">Visit Our Other Sites</p>
-            <ul class="mt-3">
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://cookies.co/">Cookies.co</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://cookiessf.com/">Cookies Clothing</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://impact.cookies.co/">Cookies Social Impact</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://cookies.co/stores">Cookies Store Locator</a>
-              </li>
-            </ul>
-          </div>
-          <div class="widget-link  pt-3">
-            <p class="pb-2 text-2xl text-heading tracking-wide border-b border-skin-accent text-skin-inverted pb-1">Our Brands</p>
-            <ul class="mt-3">
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://cookies.co/">Cookies</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://lemonnade.com/">Lemonnade</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://collinsave.co/">Collins Ave</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://www.theminntz.com/">Minntz</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://grandifloragenetics.com/">Grandiflora</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="https://runthejewels.com/pages/smoke">Run The Jewels</a>
-              </li>
-            </ul>
-          </div>
-          <div class="widget-link  pt-3">
-            <p class="pb-2 text-2xl text-heading tracking-wide border-b border-skin-accent text-skin-inverted pb-1">Help</p>
-            <ul class="mt-3">
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" href="/pages/shipping-policy">Shipping Policy</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" href="/pages/return-and-exchange-policy">Return and Exchange Policy</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" href="/pages/contact">Contact</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" href="/pages/terms-conditions">Terms &amp; Conditions</a>
-              </li>
-              <li class="mb-1">
-                <a class="font-secondary tracking-tight text-skin-inverted" href="/pages/privacy-policy">Privacy Policy</a>
-              </li>
-            </ul>
-          </div>
+          {%- for link in section.settings.footer_menu.links -%}
+            <div class="widget-link  pt-3">
+              <p class="pb-2 text-2xl text-heading tracking-wide border-b border-skin-accent text-skin-inverted pb-1 m-0">{{ link.title | escape }}</p>
+              <ul class="mt-3">
+                {%- for childlink in link.links -%}
+                  <li class="mb-1">
+                    <a class="font-secondary tracking-tight text-skin-inverted" rel="noreferrer noopener" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                  </li>    
+                {%- endfor -%}    
+              </ul>
+            </div>  
+  
+          {%- endfor -%}  
         </div>
         <div class="hidden md:block"></div>
       </div>
@@ -130,7 +66,7 @@
   "settings": [
     {
       "type": "link_list",
-      "id": "footer-menu",
+      "id": "footer_menu",
       "label": "Menu"      
     }
   ]
