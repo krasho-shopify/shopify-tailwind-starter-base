@@ -1,6 +1,9 @@
+{%- if section.settings.show_announcement == true -%}
 <div class="w-full h-[40px] relative text-center font-serif text-xs md:text-sm mx-auto flex items-center justify-center bg-cookies-primary text-black">
   {{ section.settings.announcement_title }}
 </div>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
