@@ -1,0 +1,74 @@
+<div class="relative border border-skin-dark-soft rounded-md basis-52 shrink-0">
+    <a href="{{ product.url }}">
+      <div class="flex flex-col group overflow-hidden relative h-full">
+        {{ product.featured_image | image_url: width: 320, height: 400 | image_tag: alt: product.title, class: "aspect-[4/5] w-full object-cover fadeIn"}}
+        <div class="items-center px-2 h-full pb-20 relative">
+          <p class="w-full overflow-hidden inline-grid text-lg text-white mt-2 font-medium">{{ product.title }}</p>
+          <p class="w-full overflow-hidden inline-grid font-serif text-sm text-cookies-subtle">Vape</p>
+        </div>
+      </div>
+    </a>
+    <link rel="prefetch" as="fetch" href="{{ product.url }}">
+    <div class="absolute left-0 right-0 bottom-2 grid grid-cols-4 px-2 pt-4">
+      <div class="flex flex-wrap col-span-3">
+        <div class="w-full z-20 card-review">
+          <!--<div data-oke-star-rating="" data-oke-reviews-product-id="shopify-7705057722595" data-oke-rendered="">
+            <div data-oke-reviews-version="0.59.4" data-oke-container="" class="okeReviews oke-sr">
+              <div tabindex="0" role="button" class="oke-is-clickable">
+                <div class="oke-sr-rating"> 5.0 </div>
+                <div class="oke-sr-stars">
+                  <div class="oke-stars">
+                    
+                    <div class="oke-stars-background">
+                      <svg height="18" viewBox="0 0 79.22222222222221 14" aria-hidden="true">
+                        <use x="0" href="#oke-star-empty"></use>
+                        <use x="16.155555555555555" href="#oke-star-empty"></use>
+                        <use x="32.31111111111111" href="#oke-star-empty"></use>
+                        <use x="48.46666666666667" href="#oke-star-empty"></use>
+                        <use x="64.62222222222222" href="#oke-star-empty"></use>
+                      </svg>
+                    </div>
+                    <div class="oke-stars-foreground" style="width: 100%;">
+                      <svg height="18" viewBox="0 0 79.22222222222221 14" aria-hidden="true">
+                        <use x="0" href="#oke-star-filled"></use>
+                        <use x="16.155555555555555" href="#oke-star-filled"></use>
+                        <use x="32.31111111111111" href="#oke-star-filled"></use>
+                        <use x="48.46666666666667" href="#oke-star-filled"></use>
+                        <use x="64.62222222222222" href="#oke-star-filled"></use>
+                      </svg>
+                    </div>
+                    <span class="oke-a11yText">Rated 5.0 stars</span>
+                  </div>
+                </div>
+                <div class="oke-sr-count">
+                  <span class="oke-sr-count-number">15</span>
+                  <span class="oke-sr-label-text"> Reviews</span>
+                  
+                </div>
+                <span class="oke-a11yText">Click to scroll to reviews</span>
+              </div>
+              <script type="application/json" data-oke-metafield-data="">
+                {
+                  "averageRating": "5.0",
+                  "reviewCount": 15
+                }
+              </script>
+            </div>
+          </div> -->
+        </div>
+        <div>
+          <div class="w-full flex gap-2 !p-sm">
+            <div>{{ product.price | money }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-end items-end col-span-1">
+        <button class="w-6 h-6 text-[24px] font-medium flex justify-center items-center rounded-full bg-skin-primary text-black">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm192 472c0 4.4-3.6 8-8 8H544v152c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V544H328c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h152V328c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v152h152c4.4 0 8 3.6 8 8v48z"></path>
+          </svg>
+        </button>
+        <p style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0" role="alert" aria-live="assertive"></p>
+      </div>
+    </div>
+  </div>
