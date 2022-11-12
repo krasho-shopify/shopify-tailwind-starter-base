@@ -16,6 +16,12 @@
       },
       {
         "type": "text",
+        "id": "social_title",
+        "label": "Title",
+        "default": "Find Cookies on Social:"
+      },
+      {
+        "type": "text",
         "id": "social_twitter_link",
         "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
         "info": "t:settings_schema.social-media.settings.social_twitter_link.info"
@@ -71,17 +77,17 @@
     ]
   },
   {
-    "name": "t:settings_schema.search_input.name",
+    "name": "copyright",
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.search_input.settings.header.content"
+        "content": "Copyright"
       },
       {
-        "type": "checkbox",
-        "id": "predictive_search_enabled",
-        "default": true,
-        "label": "t:settings_schema.search_input.settings.predictive_search_enabled.label"
+        "type": "text",
+        "id": "copyright_text",
+        "default": "Copyright © 2022 Cookies Creative Productions &amp; Consulting, Inc. All rights reserved.",
+        "label": "Copyright"
       },
       {
         "type": "checkbox",
