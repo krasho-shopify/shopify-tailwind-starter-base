@@ -40,5 +40,20 @@
   </div>
 </header>
 
-{%- render "nav" -%}
+{%- render "nav", menu: section.settings.menu -%}
+
+{% schema %}
+{
+  "name": "navigation-menu",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }    
+  ]
+}
+{% endschema %}
+
 
