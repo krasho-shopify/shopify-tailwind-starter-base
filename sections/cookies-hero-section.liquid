@@ -4,16 +4,7 @@
       <section class="relative justify-end flex flex-col w-full  h-[40vh] md:h-[60vh]">
         <div class="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
           <div class="">
-            {{ section.settings.hero_video | video_tag: muted: true, loop: true, autoplay: true }}
-            <!--<video width="1500" class="block object-cover w-full h-full" muted="" loop="" autoplay="" 
-               id="gid://shopify/Video/30462813143267" playsinline="" 
-               poster="https://cdn.shopify.com/s/files/1/0489/1836/4319/files/preview_images/1c027ccdde9d46af9dec68e3f8938e3c.thumbnail.0000000.jpg?v=1658728999">
-              <source src="https://cdn.shopify.com/videos/c/vp/1c027ccdde9d46af9dec68e3f8938e3c/1c027ccdde9d46af9dec68e3f8938e3c.HD-1080p-7.2Mbps.mp4" type="video/mp4">
-              <source src="https://cdn.shopify.com/videos/c/vp/1c027ccdde9d46af9dec68e3f8938e3c/1c027ccdde9d46af9dec68e3f8938e3c.m3u8" type="application/x-mpegURL">
-              <source src="https://cdn.shopify.com/videos/c/vp/1c027ccdde9d46af9dec68e3f8938e3c/1c027ccdde9d46af9dec68e3f8938e3c.HD-720p-4.5Mbps.mp4" type="video/mp4">
-              <source src="https://cdn.shopify.com/videos/c/vp/1c027ccdde9d46af9dec68e3f8938e3c/1c027ccdde9d46af9dec68e3f8938e3c.SD-480p-1.5Mbps.mp4" type="video/mp4">
-            </video>
-          -->
+            {{ section.settings.hero_video | video_tag: muted: true, loop: true, autoplay: true, image_size: "1500", class: "block object-cover w-full h-full" }}
           </div>
         </div>
         <div class="mb-4 flex flex-col items-baseline justify-between gap-4 px-6 sm:px-8 md:px-12 dark:text-primary from-primary/60">
