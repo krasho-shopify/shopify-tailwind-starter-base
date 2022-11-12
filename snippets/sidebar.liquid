@@ -22,54 +22,29 @@
                   <div class="grid">
                     <nav class="grid gap-6 p-6 sm:px-12 sm:py-8">
                       <div class="flex gap-4 flex-wrap">
-                        <h2 class="whitespace-pre-wrap max-w-prose font-header text-2xl w-full mt-4">CBD Shop</h2>
-                        <a class="w-full" href="/collections/delta-8-hhc-2g-blunts">
-                          <div class="flex items-center gap-4">
-                            <span class="max-w-prose whitespace-pre-wrap inherit font-serif text-base">Delta 8, HHC &amp; THC-O</span>
-                          </div>
-                        </a>
-                        <a class="w-full" href="/collections/cbd">
-                          <div class="flex items-center gap-4">
-                            <span class="max-w-prose whitespace-pre-wrap inherit font-serif text-base">CBD &amp; Wellness</span>
-                          </div>
-                        </a>
-                        <a class="w-full" href="/collections/caps">
-                          <div class="flex items-center gap-4">
-                            <span class="max-w-prose whitespace-pre-wrap inherit font-serif text-base">Caps</span>
-                          </div>
-                        </a>
-                        <a class="w-full" href="/collections/accessories">
-                          <div class="flex items-center gap-4">
-                            <span class="max-w-prose whitespace-pre-wrap inherit font-serif text-base">Accessories</span>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="flex gap-4 flex-wrap">
-                        <h2 class="whitespace-pre-wrap max-w-prose font-header text-2xl w-full mt-4">Quick Links</h2>
-                        <a href="https://cookies.co/catalog" target="_blank" rel="noreferrer">
-                          <div class="flex items-center gap-4">
-                            <span class="max-w-prose whitespace-pre-wrap inherit font-serif text-base">Browse Cookies.co</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                              <path fill="#00A0DC" fill-rule="evenodd" d="M12.667 8A.667.667 0 1 1 14 8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a.667.667 0 0 1 0 1.333H4A.667.667 0 0 0 3.333 4v8c0 .368.299.667.667.667h8a.667.667 0 0 0 .667-.667V8Zm-.946-4.667h-1.053a.667.667 0 1 1 0-1.333h2.667c.368 0 .666.298.666.667v2.666a.667.667 0 0 1-1.333 0V4.28L8.475 8.467l-.004.004a.667.667 0 0 1-.943-.004l-.004-.004a.667.667 0 0 1 .004-.943l4.193-4.187Z" clip-rule="evenodd"></path>
-                            </svg>
-                          </div>
-                        </a>
-                        <a href="https://cookies.co/stores" target="_blank" rel="noreferrer">
-                          <div class="flex items-center gap-4">
-                            <span class="max-w-prose whitespace-pre-wrap inherit font-serif text-base">Find a Cookies Store</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                              <path fill="#00A0DC" fill-rule="evenodd" d="M12.667 8A.667.667 0 1 1 14 8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a.667.667 0 0 1 0 1.333H4A.667.667 0 0 0 3.333 4v8c0 .368.299.667.667.667h8a.667.667 0 0 0 .667-.667V8Zm-.946-4.667h-1.053a.667.667 0 1 1 0-1.333h2.667c.368 0 .666.298.666.667v2.666a.667.667 0 0 1-1.333 0V4.28L8.475 8.467l-.004.004a.667.667 0 0 1-.943-.004l-.004-.004a.667.667 0 0 1 .004-.943l4.193-4.187Z" clip-rule="evenodd"></path>
-                            </svg>
-                          </div>
-                        </a>
-                        <a href="https://cookiessf.com/" target="_blank" rel="noreferrer">
-                          <div class="flex items-center gap-4">
-                            <span class="max-w-prose whitespace-pre-wrap inherit font-serif text-base">Shop Cookies Clothing</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                              <path fill="#00A0DC" fill-rule="evenodd" d="M12.667 8A.667.667 0 1 1 14 8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a.667.667 0 0 1 0 1.333H4A.667.667 0 0 0 3.333 4v8c0 .368.299.667.667.667h8a.667.667 0 0 0 .667-.667V8Zm-.946-4.667h-1.053a.667.667 0 1 1 0-1.333h2.667c.368 0 .666.298.666.667v2.666a.667.667 0 0 1-1.333 0V4.28L8.475 8.467l-.004.004a.667.667 0 0 1-.943-.004l-.004-.004a.667.667 0 0 1 .004-.943l4.193-4.187Z" clip-rule="evenodd"></path>
-                            </svg>
-                          </div>
-                        </a>
+                        {%- for link in section.settings.sidebar_menu.links -%}
+                            <h2 class="whitespace-pre-wrap max-w-prose font-header text-2xl w-full mt-4">{{ link.title | escape }}</h2>
+
+                            {%- for childlink in link.links -%}
+                                {%- if childlink.url contains 'http://' or childlink.url contains 'https://' -%}
+                                    <a href="{{ childlink.url }}" target="_blank" rel="noreferrer">
+                                        <div class="flex items-center gap-4">
+                                          <span class="max-w-prose whitespace-pre-wrap inherit font-serif text-base">{{ childlink.title | escape}}</span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                            <path fill="#00A0DC" fill-rule="evenodd" d="M12.667 8A.667.667 0 1 1 14 8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a.667.667 0 0 1 0 1.333H4A.667.667 0 0 0 3.333 4v8c0 .368.299.667.667.667h8a.667.667 0 0 0 .667-.667V8Zm-.946-4.667h-1.053a.667.667 0 1 1 0-1.333h2.667c.368 0 .666.298.666.667v2.666a.667.667 0 0 1-1.333 0V4.28L8.475 8.467l-.004.004a.667.667 0 0 1-.943-.004l-.004-.004a.667.667 0 0 1 .004-.943l4.193-4.187Z" clip-rule="evenodd"></path>
+                                          </svg>
+                                        </div>
+                                    </a>              
+                                {%- else -%}
+                                    <a class="w-full" href="{{ childlink.url }}">
+                                        <div class="flex items-center gap-4">
+                                        <span class="max-w-prose whitespace-pre-wrap inherit font-serif text-base">{{ childlink.title | escape}}</span>
+                                        </div>
+                                    </a>          
+                                {%- endif -%}
+                            {%- endfor %}
+
+                        {%- endfor %}                            
                       </div>
                     </nav>
                   </div>
