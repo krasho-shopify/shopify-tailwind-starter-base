@@ -12,8 +12,8 @@
       <div class="flex items-center justify-center !text-md text-heading2 uppercase tracking-tight">
         <!--<img class="mr-2 !w-[30px]" src="https://www.datocms-assets.com/52824/1658777341-2021_c-bite-logo-white-1.svg" width="30" height="30" alt="Cookies" loading="lazy" decoding="async">SHOP-->
         
-        {%- if section.settings.logo_cookies != blank -%}          
-           {{ section.settings.logo_cookies | image_url: width: 100 | image_tag: alt: "Cookies" }}
+        {%- if settings.logo_cookies != blank -%}          
+           {{ settings.logo_cookies | image_url: width: 100 | image_tag: alt: "Cookies" }}
         {%- else -%}
           <span class="h2">{{ shop.name }}</span>
         {%- endif -%}
@@ -48,7 +48,7 @@
 </header>
 
 {%- render "nav", menu: section.settings.menu -%}
-{%- render "sidebar", menu: section.settings.sidebar_menu -%}
+{%- render "sidebar", sidebar_menu: section.settings.sidebar_menu -%}
 
 {% schema %}
 {
@@ -63,13 +63,7 @@
       "type": "link_list",
       "id": "sidebar_menu",
       "label": "Sidebar Menu"      
-    },
-
-    {
-      "type": "image_picker",
-      "id": "logo_cookies",
-      "label": "Logo"      
-    }    
+    }
   ]
 }
 {% endschema %}

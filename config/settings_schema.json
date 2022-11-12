@@ -1,11 +1,25 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "6.0.2",
+    "theme_name": "Cookies",
+    "theme_version": "1.0.0",
     "theme_author": "Shopify",
     "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
     "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  {
+    "name": "general",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Identity"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_cookies",
+        "label": "Logo"          
+      }
+    ]
   },
   {
     "name": "t:settings_schema.social-media.name",
