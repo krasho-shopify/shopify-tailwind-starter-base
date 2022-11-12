@@ -4,9 +4,15 @@
       "type": "cookies-hero-section",
       "settings": {
       }
+    },
+    "20a5a3fb-c49f-44ff-9227-ae1331a6fd2a": {
+      "type": "featured-collection",
+      "settings": {
+      }
     }
   },
   "order": [
-    "d4b4fa05-5c08-40da-8eb0-0a01ea17d954"
+    "d4b4fa05-5c08-40da-8eb0-0a01ea17d954",
+    "20a5a3fb-c49f-44ff-9227-ae1331a6fd2a"
   ]
 }
