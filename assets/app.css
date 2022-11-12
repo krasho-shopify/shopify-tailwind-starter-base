@@ -2021,6 +2021,10 @@ input[type='search']::-webkit-search-results-decoration {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+
+  .sm\:text-center {
+    text-align: center;
+  }
 }
 
 @media (min-width: 48em) {
@@ -2090,6 +2094,10 @@ input[type='search']::-webkit-search-results-decoration {
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
   }
 
   .md\:text-sm {
